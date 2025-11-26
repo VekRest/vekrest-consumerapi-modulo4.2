@@ -1,0 +1,21 @@
+name: vekconsumerapi CI/CD Workflow
+
+on:
+  push:
+    tags: ['v*', 'v*.*', 'v*.*.*']
+  workflow_dispatch:
+
+jobs:
+  main-template:
+    uses: VekRest/workflow-templates/.github/workflows/main-template.yml@main
+    with:
+      sonar_project_key: vekconsumerapi
+      sonar_org: vekrest
+      dockerhub_repo: vekrest-vekconsumerapi
+      maven_group: com.vekrest.vekconsumerapi
+      maven_artifact: vekconsumerapi
+    secrets:
+      sonar_token: ${{ secrets.SONAR_TOKEN }}
+      dockerhub_user: ${{ secrets.DOCKERHUB_USER }}
+      dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
+      release_token: ${{ secrets.RELEASE_TOKEN }}
