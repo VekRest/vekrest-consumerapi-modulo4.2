@@ -1,4 +1,4 @@
-name: vekconsumerapi CI/CD Workflow
+name: VekConsumerAPI CI/CD Workflow
 
 on:
   push:
