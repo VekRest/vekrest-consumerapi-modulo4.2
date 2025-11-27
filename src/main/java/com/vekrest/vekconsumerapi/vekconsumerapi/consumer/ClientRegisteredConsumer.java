@@ -46,6 +46,7 @@ public class ClientRegisteredConsumer {
 
         if(consumerRecord.headers().lastHeader("TOKEN") != null){
             final String token = new String(consumerRecord.headers().lastHeader("TOKEN").value());
+            LOG.info("Token de autenticação recebido no cabeçalho da mensagem Kafka.");
 
             if(vekClientApiEnabled){
                 LOG.info("A integração com a VekSecurity está habilitada. Iniciando registro do cliente na VekClient.");

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 @FeignClient(
         name = "VekSecurityIntegration",
-        url = "${vekrest.vekclient.api.url}"
+        url = "${vekrest.vekclient.api.url}/vekrest/vekclient/v1"
 )
 public interface VekClientIntegrationWithFeign {
     @PostMapping("/client")
